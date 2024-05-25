@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+const callFunction = async () => {
+  try {
+  const response = await fetch('https://us-central1-cosmochat-ui-7b128.cloudfunctions.net/helloWorld')
+  if(!response.ok){
+    throw new Error('Failed to call Firebase function');
+  }
+  const data = await response.text(); // or response.json() if your function returns JSON
+  console.log(data);
+} catch(error){
+  console.error("Error calling Firebase function:", error)
+}
+};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={callFunction}>Call Firebase Function</button>
     </div>
   );
 }
