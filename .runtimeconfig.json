@@ -1,0 +1,7 @@
+{
+    "myproject": {
+      "service_account_key": "Config/cosmo-service-key.json",
+      "cosmo_chat_open_ai_key":"Config/open-ai-key.json"
+    }
+  }
+  

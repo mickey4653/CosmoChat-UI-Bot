@@ -9,3 +9,11 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
     response.status(200).send("Hello from Firebase!");
   });
 });
+
+const {sendMessage} = require("./api/sendMessage");
+const {receiveMessage} = require("./api/receiveMessage");
+const {fetchMessages} = require("./api/fetchMessage");
+
+exports.sendMessage = functions.https.onRequest(sendMessage);
+exports.receiveMessage = functions.https.onRequest(receiveMessage);
+exports.fetchMessages = functions.https.onRequest(fetchMessages);

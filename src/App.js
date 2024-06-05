@@ -1,25 +1,33 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Home from './pages/Home';
+import HelloWorld from './pages/HelloWorld';
+import WelcomeScreen from './pages/WelcomeScreen';
+import ActivityDashboard from './pages/ActivityDashboard';
+import Chat from './pages/Chat';
+
 import './App.css';
 
 function App() {
-const callFunction = async () => {
-  try {
-  const response = await fetch('https://us-central1-cosmochat-ui-7b128.cloudfunctions.net/helloWorld')
-  if(!response.ok){
-    throw new Error('Failed to call Firebase function');
-  }
-  const data = await response.text(); // or response.json() if your function returns JSON
-  console.log(data);
-} catch(error){
-  console.error("Error calling Firebase function:", error)
-}
-};
-
   return (
-    <div className="App">
-      <button onClick={callFunction}>Call Firebase Function</button>
-    </div>
+   <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route  path="/hello-world" element={<HelloWorld />} /> {/* added route to helloworld for testing api */}
+      <Route path="/welcome" element={<WelcomeScreen />} />
+      <Route path="/chat" element={<Chat />} />
+      <Route path="/activity" element={<ActivityDashboard />} />
+      
+    </Routes>
+   </Router>
   );
 }
+
+
+
+
+
+
+
 
 export default App;

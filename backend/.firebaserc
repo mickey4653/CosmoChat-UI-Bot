@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "cosmochat-ui-7b128"
-  }
+    "default": "cosmochat-ui-7b128",
+    "production": "cosmochat-ui-7b128"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

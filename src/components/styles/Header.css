@@ -1,0 +1,34 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 35%;
+}
+
+.header-left{
+    display:flex;
+    align-items: center;
+}
+
+.header-avatar{
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin-right: 10px;
+padding: 10px;
+}
+
+.header-title{
+   font-size: 24px;
+   font-weight: bold;
+}
+
+.header-right .icon-stats,
+.header-right .icon-activity{
+
+    font-size: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+}
